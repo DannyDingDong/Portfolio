@@ -118,7 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-// Variables
+console.log("javascript is connected"); // Variables
+
 var hamburger = document.querySelector(".hamburger");
 var dropDownNav = document.querySelector(".mobile-nav");
 var projectBtn = document.getElementById("project-btn");
@@ -127,26 +128,31 @@ var slider = document.getElementById("slider");
 var loader = document.querySelector(".loader");
 var heroPage = document.querySelector(".hero");
 var nav = document.querySelector("#desktopNav");
+var projOverlay = document.querySelector(".main-proj-img");
 document.addEventListener("touchstart", function () {}, true); // Loader
 
 window.addEventListener("load", function () {
   loader.classList.add("loader-hidden");
 }); // Work section slider menu
-
-projectBtn.addEventListener("click", function () {
-  this.classList.add("proj-active");
-  designBtn.classList.remove("proj-active");
-  slider.classList.remove("slider-active");
-});
-designBtn.addEventListener("click", function () {
-  projectBtn.classList.remove("proj-active");
-  this.classList.add("proj-active");
-  slider.classList.add("slider-active");
-}); // Mobile Nav
+// projectBtn.addEventListener("click", function () {
+//   this.classList.add("proj-active");
+//   designBtn.classList.remove("proj-active");
+//   slider.classList.remove("slider-active");
+// });
+// designBtn.addEventListener("click", function () {
+//   projectBtn.classList.remove("proj-active");
+//   this.classList.add("proj-active");
+//   slider.classList.add("slider-active");
+// });
+// Mobile Nav
 
 hamburger.addEventListener("click", function () {
   this.classList.toggle("is-active");
   dropDownNav.classList.toggle("active-nav");
+}); // Mobile & Tablet Projects
+
+projOverlay.addEventListener("click", function () {
+  alert("ive been clicked");
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -176,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65289" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62342" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
